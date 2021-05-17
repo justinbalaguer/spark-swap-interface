@@ -13,6 +13,7 @@ import Pool from './Pool'
 import MigrateV1 from './MigrateV1'
 import MigrateV1Exchange from './MigrateV1/MigrateV1Exchange'
 import RemoveV1Exchange from './MigrateV1/RemoveV1Exchange'
+import LiquidityStaking from './Liquidity-Staking'
 import PoolFinder from './PoolFinder'
 import History from './History'
 import RemoveLiquidity from './RemoveLiquidity'
@@ -152,7 +153,7 @@ export default function App() {
                       <Route exact strict path='/remove/:currencyIdA/:currencyIdB' component={RemoveLiquidity} />
                       <Route exact strict path='/migrate/v1' component={MigrateV1} />
                       <Route exact strict path='/migrate/v1/:address' component={MigrateV1Exchange} />
-
+                      <Route exact strict path='/liquidity-staking' component={LiquidityStaking} />
                       <Route component={RedirectPathToSwapOnly} />
                     </Switch>
                   </Web3ReactManager>
