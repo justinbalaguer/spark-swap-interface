@@ -4,7 +4,7 @@ import { Button, Card as UIKitCard, CardBody, Text } from '@sparkpointio/sparksw
 import { darken } from 'polished'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
-import styled, { ThemeContext} from 'styled-components'
+import styled, { ThemeContext } from 'styled-components'
 import { useTotalSupply } from '../../data/TotalSupply'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -24,12 +24,12 @@ export const FixedHeightRow = styled(RowBetween)`
 
 export const StyledLPDetails = styled.div`
   padding: 15px;
-  background-color: ${({theme}) => theme.isDark? '#1C304A' :theme.colors.invertedContrast}
+  background-color: ${({ theme }) => (theme.isDark ? '#1C304A' : theme.colors.invertedContrast)};
 `
 
 export const HoverCard = styled(Card)`
   // border: 1px solid ${({ theme }) => theme.colors.invertedContrast};
-  background-color: ${({ theme }) => theme.isDark? '#1C304A' : theme.colors.invertedContrast};
+  background-color: ${({ theme }) => (theme.isDark ? '#1C304A' : theme.colors.invertedContrast)};
   :hover {
     border: 1px solid ${({ theme }) => darken(0.06, theme.colors.invertedContrast)};
   }
@@ -46,7 +46,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
   const theme = useContext(ThemeContext)
   const currency0 = showUnwrapped ? pair.token0 : unwrappedToken(pair.token0)
   const currency1 = showUnwrapped ? pair.token1 : unwrappedToken(pair.token1)
-
+  console.log(pair)
   const [showMore, setShowMore] = useState(false)
 
   const userPoolBalance = useTokenBalance(account ?? undefined, pair.liquidityToken)
@@ -72,49 +72,54 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
             <AutoColumn gap="12px">
               <FixedHeightRow>
                 <RowFixed>
-                  <Text style={{ textTransform: 'uppercase', fontWeight: 600 }} fontSize="14px" color={theme.isDark? '#FFFFF': theme.colors.primary}>
+                  <Text
+                    style={{ textTransform: 'uppercase', fontWeight: 600 }}
+                    fontSize="14px"
+                    color={theme.isDark ? '#FFFFF' : theme.colors.primary}
+                  >
                     LP Tokens in your Wallet
                   </Text>
                 </RowFixed>
               </FixedHeightRow>
               <StyledLPDetails>
-              <FixedHeightRow onClick={() => setShowMore(!showMore)}>
-                <RowFixed>
-                  <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin size={20} />
-                  <Text fontSize="14px">
-                    {currency0.symbol}/{currency1.symbol}
-                  </Text>
-                </RowFixed>
-                <RowFixed>
-                  <Text fontSize="14px">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
-                </RowFixed>
-              </FixedHeightRow>
-              <AutoColumn gap="4px">
-                <FixedHeightRow>
-                  <Text fontSize="14px">{currency0.symbol}:</Text>
-                  {token0Deposited ? (
-                    <RowFixed>
-                      <Text ml="6px" fontSize="14px">
-                        {token0Deposited?.toSignificant(6)}
-                      </Text>
-                    </RowFixed>
-                  ) : (
-                    '-'
-                  )}
+                <FixedHeightRow onClick={() => setShowMore(!showMore)}>
+                  <RowFixed>
+                    <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin size={20} />
+                    {console.log(currency0)}
+                    <Text fontSize="14px">
+                      {currency0.symbol}/{currency1.symbol}
+                    </Text>
+                  </RowFixed>
+                  <RowFixed>
+                    <Text fontSize="14px">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
+                  </RowFixed>
                 </FixedHeightRow>
-                <FixedHeightRow>
-                  <Text fontSize="14px">{currency1.symbol}:</Text>
-                  {token1Deposited ? (
-                    <RowFixed>
-                      <Text ml="6px" fontSize="14px">
-                        {token1Deposited?.toSignificant(6)}
-                      </Text>
-                    </RowFixed>
-                  ) : (
-                    '-'
-                  )}
-                </FixedHeightRow>
-              </AutoColumn>
+                <AutoColumn gap="4px">
+                  <FixedHeightRow>
+                    <Text fontSize="14px">{currency0.symbol}:</Text>
+                    {token0Deposited ? (
+                      <RowFixed>
+                        <Text ml="6px" fontSize="14px">
+                          {token0Deposited?.toSignificant(6)}
+                        </Text>
+                      </RowFixed>
+                    ) : (
+                      '-'
+                    )}
+                  </FixedHeightRow>
+                  <FixedHeightRow>
+                    <Text fontSize="14px">{currency1.symbol}:</Text>
+                    {token1Deposited ? (
+                      <RowFixed>
+                        <Text ml="6px" fontSize="14px">
+                          {token1Deposited?.toSignificant(6)}
+                        </Text>
+                      </RowFixed>
+                    ) : (
+                      '-'
+                    )}
+                  </FixedHeightRow>
+                </AutoColumn>
               </StyledLPDetails>
             </AutoColumn>
           </CardBody>

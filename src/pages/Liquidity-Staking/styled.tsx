@@ -4,8 +4,7 @@ import styled, { ThemeContext } from 'styled-components';
 
 export const MainContainer = styled.div`
 position: relative;
-border: 1px solid blue;
-max-width: 1440px;
+max-width: 1366px;
 width: 100%;
 z-index: 5;
 min-height: 30vh;
