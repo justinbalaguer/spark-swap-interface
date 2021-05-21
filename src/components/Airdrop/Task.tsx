@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, Button } from '@sparkpointio/sparkswap-uikit'
 import { AutoColumn } from '../Column'
 import { AutoRow, RowBetween, RowFixed } from '../Row'
-import { TaskItem, TaskDetailSection, TaskButtonSection, TaskTitle, TaskDetails} from './Styleds'
+import { TaskItem, TaskDetailSection, TaskButtonSection, TaskTitle, TaskDetails, TaskButton} from './Styleds'
 
 export default function TaskItemContainer({
     title,
@@ -34,11 +34,11 @@ export default function TaskItemContainer({
                 </TaskDetailSection>
                 <TaskButtonSection>
                     <AutoColumn>
-                        <Button
+                        <TaskButton
                             variant={btnVariant}
                         >
                             {status}
-                        </Button>
+                        </TaskButton>
                     </AutoColumn>
                 </TaskButtonSection>
             </RowBetween>

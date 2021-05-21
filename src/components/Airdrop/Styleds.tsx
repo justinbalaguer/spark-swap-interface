@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Text } from '@sparkpointio/sparkswap-uikit'
+import { Text, Button } from '@sparkpointio/sparkswap-uikit'
 
 
 export const AirdropBody = styled.div`
@@ -16,6 +16,9 @@ export const StyledAirdropTitle = styled.div`
 export const TaskContainer = styled.div`
     background: #00152E;
     padding: 2rem;
+    @media ( max-width: 420px) {
+        padding: 12px;
+    }
 `
 
 export const TaskReward = styled.div`
@@ -36,6 +39,12 @@ export const TaskTitle = styled(Text)`
 
 export const TaskDetails = styled(Text)`
     color: #7A8695;
+`
+
+export const TaskButton = styled(Button)`
+    @media ( max-width: 420px) {
+        padding: 5px;
+    }
 `
 
 export const TaskDetailSection = styled.div`
