@@ -18,6 +18,7 @@ import History from './History'
 import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
+import Airdrop from './Airdrop'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 import { allLanguages, EN } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
@@ -125,6 +126,7 @@ export default function App() {
                       <Route exact strict path='/swap/:outputCurrency' component={RedirectToSwap} />
                       <Route exact strict path='/send' component={RedirectPathToSwapOnly} />
                       <Route exact strict path='/find' component={PoolFinder} />
+                      <Route exact strict path='/airdrop' component={Airdrop} />
                       <Route
                         exact
                         path='/farms'

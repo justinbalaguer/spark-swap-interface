@@ -27,6 +27,11 @@ const config: MenuEntry[] = [
     href: "https://sparkswap.info/#/home",
   },
   {
+    label: "Airdrop",
+    icon: "InfoIcon",
+    href: "/swap",
+  },
+  {
     label: "Help",
     icon: "MoreIcon",
     href: "https://medium.com/theecosystem/a-beginners-guide-to-sparkswap-79f92a2f7074"
