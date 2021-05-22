@@ -53,7 +53,7 @@ const Airdrop = () => {
                         Task/Requirements
                     </Text>
                     <TaskReward>
-                        <Text fontSize="20px">
+                        <Text fontSize="20px" color='#fff'>
                             Complete the following tasks and earn $10 worth of SRK or SFUEL
                         </Text>
                     </TaskReward>

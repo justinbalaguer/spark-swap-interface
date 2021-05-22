@@ -14,7 +14,7 @@ export const StyledAirdropTitle = styled.div`
 `
 
 export const TaskContainer = styled.div`
-    background: #00152E;
+    background: ${({ theme }) => (theme.isDark ? '#00152E' : '#FFFFFF')};
     padding: 2rem;
     @media ( max-width: 420px) {
         padding: 12px;
@@ -22,13 +22,13 @@ export const TaskContainer = styled.div`
 `
 
 export const TaskReward = styled.div`
-    background: #1B60A3;
+    background: ${({ theme }) => (theme.isDark ? '#1B60A3' : '#006BF8')};
     padding: 1rem;
     margin: 1rem 0 1rem 0;
 `
 
 export const TaskItem = styled.div`
-    background: #1C304A;
+    background: ${({ theme }) => (theme.isDark ? '#1C304A' : '#EEEAF4')};
     padding: 1rem;
     margin: 1rem 0 1rem 0;
 `
@@ -45,6 +45,10 @@ export const TaskButton = styled(Button)`
     @media ( max-width: 420px) {
         padding: 5px;
     }
+`
+
+export const TaskRewardDetails = styled(Text)`
+
 `
 
 export const TaskDetailSection = styled.div`
