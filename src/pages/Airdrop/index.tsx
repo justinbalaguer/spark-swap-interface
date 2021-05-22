@@ -16,6 +16,30 @@ import AppBody from '../AppBody'
 
 const Airdrop = () => {
     const [isExpertMode] = useExpertModeManager()
+
+    const handleTwitter = () => {
+        return(
+            console.log("Twitter")
+        )
+    }
+
+    const handleTelegram = () => {
+        return(
+            console.log("Telegram")
+        )
+    }
+
+    const handleWallet = () => {
+        return(
+            console.log("Wallet")
+        )
+    }
+
+    const handleGoogle = () => {
+        return(
+            console.log("Google")
+        )
+    }
     
     return(
         
@@ -37,26 +61,25 @@ const Airdrop = () => {
                         title = "Twitter"
                         details = "Follow, retweet, tag 3 people, change your profile photo to SparkSwap logo with caption"
                         status = "ONGOING"
+                        onClick = {handleTwitter}
                     />
                     <TaskItemContainer
                         title = "Telegram"
                         details = "Join SparkDeFi &amp; SparkPoint Community"
                         status = "ONGOING"
+                        onClick = {handleTelegram}
                     />
                     <TaskItemContainer
                         title = "Wallet address Whitelist"
                         details = "Be part of SparkSwap Whitelist"
                         status = "ONGOING"
-                    />
-                    <TaskItemContainer
-                        title = "Wallet address Whitelist"
-                        details = "Be part of SparkSwap Whitelist"
-                        status = "ONGOING"
+                        onClick = {handleWallet}
                     />
                     <TaskItemContainer
                         title = "Fill out Google form"
                         details = "Fill out Google form when you finish the tasks/requirements"
                         status = "CONNECT"
+                        onClick = {handleGoogle}
                     />
                 </TaskContainer>
             </AirdropBody>

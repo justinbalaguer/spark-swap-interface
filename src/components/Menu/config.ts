@@ -29,7 +29,7 @@ const config: MenuEntry[] = [
   {
     label: "Airdrop",
     icon: "InfoIcon",
-    href: "/swap",
+    href: "/airdrop",
   },
   {
     label: "Help",

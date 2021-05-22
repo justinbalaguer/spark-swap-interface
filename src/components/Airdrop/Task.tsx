@@ -7,7 +7,8 @@ import { TaskItem, TaskDetailSection, TaskButtonSection, TaskTitle, TaskDetails,
 export default function TaskItemContainer({
     title,
     details,
-    status
+    status,
+    onClick
 }){
 
     let btnVariant
@@ -36,6 +37,7 @@ export default function TaskItemContainer({
                     <AutoColumn>
                         <TaskButton
                             variant={btnVariant}
+                            onClick = {onClick}
                         >
                             {status}
                         </TaskButton>
