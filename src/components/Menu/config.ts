@@ -7,19 +7,32 @@ const config: MenuEntry[] = [
     href: "/swap",
   },
   {
-    label: "Farm",
+    label: "Staking",
     icon: "FarmIcon",
-    href: "https://app.srk.finance/#/stake",
-  },
-  {
-    label: "Pool",
-    icon: "PoolIcon",
-    href: "https://app.srk.finance/#/pool",
+    items: [
+      {
+        label: "Farms",
+        href: "https://stake.sparkswap.finance/#/farms",
+      },
+      {
+        label: "Pools",
+        href: "https://stake.sparkswap.finance/#/pools",
+      },
+      {
+        label: "Old Farms/Pools",
+        href: "https://app.srk.finance/#/stake",
+      },
+    ],
   },
   {
     label: "Bridge",
     icon: "BridgeIcon",
     href: "https://app.srk.finance/#/bridge",
+  },
+  {
+    label: "Launch",
+    icon: "LaunchIcon",
+    href: "https://launch.sparkswap.finance/#/"
   },
   {
     label: "Info",
@@ -32,10 +45,15 @@ const config: MenuEntry[] = [
     href: "https://app.srk.finance/#/airdrop"
   },
   {
+    label: "Teams",
+    icon: "GroupsIcon",
+    href: "/teams"
+  },
+  {
     label: "Help",
     icon: "MoreIcon",
     href: "https://medium.com/theecosystem/a-beginners-guide-to-sparkswap-79f92a2f7074"
-  },
+  }
   // {
   //   label: 'Trade',
   //   icon: 'TradeIcon',
